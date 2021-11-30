@@ -18,9 +18,15 @@ install packages
 paru
 paru archlinux-keyring
 paru -S --needed base-devel
+paru -S gvim
 paru -S ripgrep fd fzf plocate 
 paru -S qutebrowser fish starship nnn
-set content blabla for certificates
+
+if no javascript needed netsurf can do the job
+
+# qutebrowser
+set content.tls.certificate_errors load-insecurely
+# better way for this ?
 
 set .config
 
@@ -34,6 +40,16 @@ for alias
 put some dracula theme everywhere
 
 install proper vim from dotfiles
+
+public dots
+git clone https://github.com/xkdots/dotfiles.git
+
+cd dotfiles
+
+cp .vimrc ~/
+cp .xkt.vim ~/
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 heavy version go with firefox/chrome + vimium + vscode 
 pycharm and the like
