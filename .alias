@@ -1,0 +1,270 @@
+# Programs
+#alias cal="cal -m"
+#alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
+#alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
+alias vi="vim"
+alias gvim="gvim"
+alias vr='vim -c "Unite file_mru"'
+#alias xclip="xclip -selection c"
+
+# File handling and moving around
+alias cd..="cd .."
+# alias cdu="cd .."
+# alias cdb="cd -"
+alias cdl="tree -Ld 2"
+alias cddd="tree -Ld 3"
+alias cdddd="tree -Ld 4"
+alias cdD="tree -d"
+alias cdu="cd .."
+alias cdc="cd .."
+alias cp="cp -i"
+alias fixdir="find . -type d -exec chmod 755 {} +"
+alias fixfiles="find . -type f -exec chmod 644 {} +"
+alias grep="grep -i"
+alias ll="ls -lh"
+alias la="ls -Ca"
+alias lla="ls -lha"
+alias lr="ls -lrt"                          # list recent
+alias lv='vim `ls -tr | tail -1`'           # last vim TODO creer une fonction zsh
+alias vh=fzf-open-file-or-dir               # vim here
+alias gt='urxvt&'                           # new term here
+alias lra="ls -ra"
+#alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
+alias mkdir="mkdir -p"
+alias mv="mv -i"
+# alias rm="rm -I"
+alias rsync="rsync --progress"
+alias sudoedit="sudoedit -E "
+alias unp="unp -u"
+alias hist="tail -100 ~/.histfile | cut -d';' -f 2"
+
+# General
+alias df="df -h"
+alias diff="colordiff"
+alias du="du -sh"
+alias myip="wget ipecho.net/plain -O - -q; echo"
+alias ping="ping -c 5"
+alias tree="tree -C"
+alias packages="expac --timefmt=%s '%l\t%n' | sort -n"
+alias q="exit"
+
+# Shorthand for editing dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias aliases="vim $HOME/.alias"
+alias ale="vim $HOME/.alias"
+alias als="source $HOME/.alias"
+alias bashrc="vim $HOME/.bashrc"
+alias zshrc="vim $HOME/.zshrc"
+alias zh="vim $HOME/.zshrc"
+alias ze="vim $HOME/.zshrc"
+alias zshrcs="source $HOME/.zshrc"
+alias szsh="source $HOME/.zshrc"
+alias zs="source $HOME/.zshrc"
+alias zt="source $HOME/.zsh_test"
+alias zte="vim $HOME/.zsh_test"
+alias preztorc="vim $HOME/.zpreztorc"
+alias urxvtconf="vim $HOME/.Xdefaults"
+alias vimrc="vim $HOME/.vimrc"
+alias vimrcl="vim $HOME/.vimrc.last"
+alias fbvpn="openvpn --config /etc/openvpn/client/config_openvpn_routed_xkt.conf"
+# to test my vimconf
+alias vimx='vim --cmd "set runtimepath^=/home/xavier/.vim" \
+               --cmd "set runtimepath+=/home/xavier/.vim/after" \
+               --cmd "set runtimepath+=/home/xavier/.ghq/bitbucket.org/whitewand/vimconf" \
+               -u /home/xavier/.ghq/bitbucket.org/whitewand/vimconf/_vimrc'
+alias uxconf="vim $HOME/.Xdefaults"
+alias i3conf="vim $HOME/.i3/config"
+alias keyconf="vim $HOME/.xbindkeysrc"
+
+# to create functions use zshrc
+
+# my precious
+alias c="cat"
+alias v="vim"           # change this when have fasd
+# alias s="peco"
+# alias h="head"
+alias see="peco"
+# alias x="peco | xclip"
+#alias locate="sudo updatedb; locate"
+alias lf="locate / | fzf"
+alias loc="locate"
+#alias vz="vim fzfa)"
+# alias vf="vim `fzf`"
+alias fz="locate / | fzf"
+# alias vf="find . -type f | fzf"
+# alias ffa="find . | fzf"
+alias fif="ag --nobreak --nonumbers --noheading . | fzf"
+# alias y="yaourt --noconfirm"
+alias q="exit"
+alias rr="ranger"
+alias rrc="vim ~/.config/ranger/rc.conf"
+# alias fm="gnome-commander&"
+# alias cdr='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
+#alias x="exit"
+alias cls="clear"
+#alias ghq="/home/xavier/Projects/gocode/bin/ghq"
+# alias ghql="ghq list |s |xclip -i; sleep 2; ghq look $(xclip -o)"
+alias show_packages="expac --timefmt=%s '%l\t%n' | sort -n"
+alias rebuild="pacbuilder --install --edit"
+alias lynx="lynx -vikeys -accept_all_cookies"
+alias tmux='tmux -u -2'
+# using surfraw
+# alias gg="sr duckduckgo"
+
+#alias bigfld="du -hsx * | sort -rh | head -10"
+alias bigfld="du -Sh | sort -rh | head -n 15"
+alias bigfile="ls -lSh"
+#https://blog.dbrgn.ch/2012/10/23/recompile-vim-on-arch-linux/
+#https://gist.github.com/MicahElliott/3048622
+
+# my precious
+alias video="mplayer -zoom"
+alias pdf="zathura"
+alias image="gpicview"
+# use ftp on 254 to get the files
+alias c="cat"
+# alias v="vim"           # change this when have fasd
+# need fasd
+alias f='fasd'
+# if mac
+alias xclip='pbcopy'
+#alias v='fasd -e vim' # quick opening files with vim
+#alias vv='f -e "vim --servername XKT --remote-tab-silent "'
+#alias vim="vim --servername XKT"
+function runvim() {
+    vim --servername XKT --remote-tab-silent $@ && i3-msg "[title=VIM] focus"
+}
+#alias ve=runvim
+alias e=vim
+# alias vim=runvim
+# alias ve="vim --remote-tab-silent"
+
+alias savei3='i3-save-tree --workspace 2 > ~/.i3/workspace-2.json'
+alias restorei3='i3-msg "workspace 2; append_layout ~/.i3/workspace-2.json"'
+
+alias y="yaourt --noconfirm"
+alias removepac="yaourt -Rcs"
+alias yr="yaourt -Rcs"
+alias yu="yaourt -Sy"  # update if fails when getting some packages
+alias pac="pacli IA"
+alias testpac="yaourt -D -asdeps"
+alias validpac="yaourt -D -asexplicit"
+alias orphanpac="yaourt -Qtd"
+alias sysupdate="sudo pacman -S archlinux-keyring && sudo pacman -Syyu"
+# offline install
+alias installme="sudo pacman -U"
+# if key pb
+# pacman-key --refresh-keys
+# or
+# pacman-key --init
+# pacman-key --populate
+# alias sysupdate="sudo pacman --noconfirm -Syyu"
+# alias s="peco"
+# alias x="peco | xclip"
+
+# alias nemo="nemo --no-desktop &"
+
+# jump to recently used items
+#alias a='fasd -a' # any
+#alias s='fasd -si' # show / search / select
+#alias d='fasd -d' # directory
+#alias f='fasd -f' # file
+#alias z='fasd_cd -d' # cd, same functionality as j in autojump
+#alias zz='fasd_cd -d -i' # interactive directory jump
+alias j='fasd_cd -d' # cd, same functionality as j in autojump
+
+alias s="googler -j"
+# ghq alias
+
+# alias ghq='/home/xkt/go/bin/ghq'
+# alias ghq='/home/xavier/Projects/gocode/bin/ghq'
+alias ghl='cd $(ghq list -p | fzf)'
+alias gho='gh-open $(ghq list -p | fzf)'
+alias ghf='firefox http://www.yasiv.com/github/#/ &'
+
+# copy with progress
+alias cpv='rsync -ah --progress'
+
+# alias n='nnn'
+
+# alias pvim='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
+# alias g='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
+# alias lsf='ls "$(find . -not -iwholename "*.git*" -type f | fzf)"'
+alias ff='find . -not -iwholename "*.git*" -type f | fzf'
+# alias cdf='ls "$(find . -not -iwholename "*.git*" -type f | fzf)"'
+# alias pcd='cd $(find . -type d | fzf)'
+# alias gd='cd $(find . -type d | fzf)'
+# alias lcd='cd -- "$(ls -dt -- */ | head -1)"'
+alias x='history | tail -1 | cut -d" " -f5- | xclip -i'
+
+#alias sa='source ~/.alias'
+
+# from http://brettterpstra.com/2012/01/04/scripting-readability-markdownify-for-clipping-web-pages/
+# transform web page into markdown / use with vim as pager
+alias rtt="read2text"
+alias grab="read2text"
+# alias fx="ls -a |x"
+alias fx="fzf | xclip"
+# TODO make a nice grab last command and pipe it to fzf
+# TODO or select text mouseless with urxvt combo with grab all the things
+#alias old="anamnesis -b"
+#alias oldl="anamnesis -l 10000"
+#check parcellite something commandline
+
+alias wifi="~/wifi_home.sh"
+#uname -a
+#echo $SHELL
+#tty
+#uptime
+#w #who is connected
+#whoami
+#users
+#cat /etc/sudoers
+#sudo -s
+#tail -f /var/log/syslog
+#sort << EOF
+#this ; then ; that
+#this & and that & and that
+#this 2> errors && if previous ok then that
+#this 2> errors && if previous ok then that || if first fail then that
+
+#use the extract function
+#combine with the rest of the magic on the work vm
+
+
+#gpg --symmetric --cipher-algo AES256 -o my_encrypted_file somefile
+#openssl enc -aes-256-cbc -in original_file -out encrypted_file
+#openssl enc -d -aes-256-cbc -in encrypted_file -out original_file
+
+# Zippin
+alias gz='tar -zcvf'
+
+# helpers
+# pip install eg
+alias how='eg'
+# howdoi et s
+
+# Global aliases
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g C='| wc -l'
+alias -g H='| head'
+alias -g L="| less"
+alias -g N="| /dev/null"
+alias -g S='| sort'
+alias -g G='| grep' # now you can do: ls foo G something
+# alias -g X='| peco | xclip'
+# alias -g F='| peco | xclip'
+
+# $ source /opt/anaconda2/bin/activate root
+# $ source /opt/anaconda2/bin/deactivate root
+alias spy='source /opt/anaconda2/bin/activate root'
+alias nopy='source /opt/anaconda2/bin/activate root'
+
+# chezmoi maintenance
+# chezmoi init --apply --verbose https://github.com/username/dotfiles.git
+
+# vim: ft=sh
+
