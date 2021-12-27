@@ -8,6 +8,7 @@ install via calamares
 
 pick the english version
 then only set the setxkbmap correctly
+see man xkeyboard-config
 if no menu key play with another option under righ thumb
 
 remove pico from i3/config

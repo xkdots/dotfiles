@@ -290,9 +290,16 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
 
 # put this in bashrc?
+exec setxkbmap -option
 exec setxkbmap -layout fr -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
 # exec setxkbmap -layout fr -option caps:super -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
 
+exec_always setxkbmap -option
 exec_always setxkbmap -layout fr -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
 
+# remove menu win if not that key
+
+# for mac
+exec_always setxkbmap -option
+exec_always setxkbmap -layout fr -option caps:escape -option ctrl:swap_lwin_lctl
 
