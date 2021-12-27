@@ -3,11 +3,20 @@
 #alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
 #alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
 alias vi="vim"
+alias v="vim"
 alias gvim="gvim"
 alias vr='vim -c "Unite file_mru"'
 #alias xclip="xclip -selection c"
 
+alias n="nnn"
+
+alias kk="fuck"
+
 alias paru="paru --bottomup"
+
+alias gits="git status"
+alias gitcm="git commit -am'changes'"
+alias gitp="git push -u origin main"
 
 # File handling and moving around
 alias cd..="cd .."
