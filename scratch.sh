@@ -8,6 +8,7 @@ install via calamares
 
 pick the english version
 then only set the setxkbmap correctly
+if no menu key play with another option under righ thumb
 
 remove pico from i3/config
 
@@ -18,9 +19,13 @@ install packages
 paru
 paru archlinux-keyring
 paru -S --needed base-devel
+paru -R vim
 paru -S gvim
-paru -S ripgrep fd fzf plocate 
+paru -S update-grub os-prober
+paru -S ripgrep fd fzf plocate tmux
 paru -S qutebrowser fish starship nnn
+
+timedatectl set-ntp true
 
 if no javascript needed netsurf can do the job
 
@@ -37,7 +42,7 @@ for fish
 for bash
 for alias
 
-put some dracula theme everywhere
+TODO put some dracula theme everywhere
 
 install proper vim from dotfiles
 
@@ -46,14 +51,21 @@ git clone https://github.com/xkdots/dotfiles.git
 
 cd dotfiles
 
+# copy config
+cp -Ra .config/* ~/.config
+
 cp .vimrc ~/
 cp .xkt.vim ~/
+
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 heavy version go with firefox/chrome + vimium + vscode 
 pycharm and the like
 build essentials / clang and the like for programming
+
+TODO pass
+TODO save credentials
 
 try again vimb or uzbl
 
