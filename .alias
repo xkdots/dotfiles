@@ -15,6 +15,7 @@ alias kk="fuck"
 alias paru="paru --bottomup"
 
 alias gits="git status"
+alias gita="git add *"
 alias gitcm="git commit -am'changes'"
 alias gitp="git push -u origin main"
 
@@ -154,6 +155,9 @@ alias e=vim
 
 alias savei3='i3-save-tree --workspace 2 > ~/.i3/workspace-2.json'
 alias restorei3='i3-msg "workspace 2; append_layout ~/.i3/workspace-2.json"'
+
+alias savepackages="pacman -Qq > myarchpackages.txt"
+# alias restorepackages="sudo pacman --noconfirm -S --needed $(comm -12 <(pacman -Slq|sort) <(sort myarchpackages.txt) )"
 
 alias y="yaourt --noconfirm"
 alias removepac="yaourt -Rcs"

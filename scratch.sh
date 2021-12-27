@@ -33,6 +33,9 @@ if no javascript needed netsurf can do the job
 # qutebrowser
 set content.tls.certificate_errors load-insecurely
 # better way for this ?
+:set content.blocking.method both
+
+paru python-adblock
 
 set .config
 
