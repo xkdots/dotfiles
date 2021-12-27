@@ -40,10 +40,14 @@ for starship
 for i3
 for kitty
 for fish
+  TODO ù for confirm validate
+  SOL or usr ctrl f then enter
 for bash
 for alias
 
 TODO put some dracula theme everywhere
+
+TODO save packages and sync to list of packages
 
 install proper vim from dotfiles
 
@@ -72,3 +76,10 @@ try again vimb or uzbl
 
 add blackarch repo
 
+
+:: MAC
+TODO invert rcmd and ralt
+compose rwin-altgr
+
+fn shift enter does shift ins to paste
+ctl + shift + c / v also work
