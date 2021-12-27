@@ -83,3 +83,10 @@ compose rwin-altgr
 
 fn shift enter does shift ins to paste
 ctl + shift + c / v also work
+
+:: sources
+
+https://github.com/rothgar/awesome-tuis
+https://idempotent-desktop.netlify.app/
+
+
