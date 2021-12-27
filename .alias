@@ -7,6 +7,8 @@ alias gvim="gvim"
 alias vr='vim -c "Unite file_mru"'
 #alias xclip="xclip -selection c"
 
+alias paru="paru --bottomup"
+
 # File handling and moving around
 alias cd..="cd .."
 # alias cdu="cd .."
@@ -29,6 +31,7 @@ alias lv='vim `ls -tr | tail -1`'           # last vim TODO creer une fonction z
 alias vh=fzf-open-file-or-dir               # vim here
 alias gt='urxvt&'                           # new term here
 alias lra="ls -ra"
+alias ls="exa"
 #alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
 alias mkdir="mkdir -p"
 alias mv="mv -i"
@@ -128,13 +131,13 @@ alias c="cat"
 # need fasd
 alias f='fasd'
 # if mac
-alias xclip='pbcopy'
+#alias xclip='pbcopy'
 #alias v='fasd -e vim' # quick opening files with vim
 #alias vv='f -e "vim --servername XKT --remote-tab-silent "'
 #alias vim="vim --servername XKT"
-function runvim() {
-    vim --servername XKT --remote-tab-silent $@ && i3-msg "[title=VIM] focus"
-}
+#function runvim() {
+#    vim --servername XKT --remote-tab-silent $@ && i3-msg "[title=VIM] focus"
+#}
 #alias ve=runvim
 alias e=vim
 # alias vim=runvim
@@ -175,13 +178,14 @@ alias installme="sudo pacman -U"
 alias j='fasd_cd -d' # cd, same functionality as j in autojump
 
 alias s="googler -j"
+alias d="ddgr -n 5"
 # ghq alias
 
 # alias ghq='/home/xkt/go/bin/ghq'
 # alias ghq='/home/xavier/Projects/gocode/bin/ghq'
-alias ghl='cd $(ghq list -p | fzf)'
-alias gho='gh-open $(ghq list -p | fzf)'
-alias ghf='firefox http://www.yasiv.com/github/#/ &'
+#alias ghl='cd $(ghq list -p | fzf)'
+#alias gho='gh-open $(ghq list -p | fzf)'
+#alias ghf='firefox http://www.yasiv.com/github/#/ &'
 
 # copy with progress
 alias cpv='rsync -ah --progress'
@@ -246,15 +250,15 @@ alias how='eg'
 # howdoi et s
 
 # Global aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g C='| wc -l'
-alias -g H='| head'
-alias -g L="| less"
-alias -g N="| /dev/null"
-alias -g S='| sort'
-alias -g G='| grep' # now you can do: ls foo G something
+#alias -g ...='../..'
+#alias -g ....='../../..'
+#alias -g .....='../../../..'
+#alias -g C='| wc -l'
+#alias -g H='| head'
+#alias -g L="| less"
+#alias -g N="| /dev/null"
+#alias -g S='| sort'
+#alias -g G='| grep' # now you can do: ls foo G something
 # alias -g X='| peco | xclip'
 # alias -g F='| peco | xclip'
 
