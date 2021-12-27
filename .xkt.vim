@@ -120,7 +120,7 @@ nnoremap gV V`]
 " TODO put back this?
 " nnoremap <esc><esc> <esc>:update<cr>
 " map ! /
-vnoremap ! /
+nnoremap ! /
 nnoremap d! d/
 nnoremap c! c/
 nnoremap v! v/
@@ -128,8 +128,8 @@ nnoremap y! y/
 
 " on mac
 " map = /
-nnoremap = /
-vnoremap = /
+" nnoremap = /
+" vnoremap = /
 " cnoremap = /
 nnoremap d= d/
 nnoremap c= c/
@@ -206,6 +206,7 @@ nnoremap vm v$
 
 " R: Reindent entire file
 "nnoremap R mqHmwgg=G`wzt`q
+nnoremap ,r :FZFMru<cr>
 " nnoremap ,R mqHmwgg=G`wzt`q
 " Ctrl-ss: (S)earch word under cur(s)or in current directory
 " nnoremap <c-s><c-s> :Unite -buffer-name=grep grep:.::<C-r><C-w><CR>
