@@ -47,6 +47,9 @@ backup config
 DONE
 
 
+:: create some universal search and open
+TODO with locate and rg / fzf
+
 # :: set .config
 
 for starship
@@ -78,7 +81,6 @@ cp -Ra .config/* ~/.config
 cp .vimrc ~/
 cp .xkt.vim ~/
 
-
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 heavy version go with firefox/chrome + vimium + vscode 
@@ -91,7 +93,9 @@ TODO save credentials
 try again vimb or uzbl
 
 add blackarch repo
+DONE
 
+TODO homerow cursor navigation
 
 :: MAC
 TODO invert rcmd and ralt

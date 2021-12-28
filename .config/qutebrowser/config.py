@@ -160,7 +160,13 @@ config.bind("<Ctrl-right>","forward")
 config.bind("<Ctrl-left>","back")
 config.bind("!","set-cmd-text /")
 
-
+# x to close tab
+# ctrl up down for tab move
+config.bind("x","tab-close")
+config.bind("<Ctrl-up>","tab-prev")
+config.bind("<Ctrl-i>","tab-prev")
+config.bind("<Ctrl-down>","tab-next")
+config.bind("<Ctrl-o>","tab-next")
 
 
 
