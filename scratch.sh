@@ -23,21 +23,31 @@ paru -S --needed base-devel
 paru -R vim
 paru -S gvim
 paru -S update-grub os-prober
-paru -S ripgrep fd fzf plocate tmux
+paru -S ripgrep fd fzf plocate tmux atool autojump
 paru -S qutebrowser fish starship nnn
 
 timedatectl set-ntp true
 
 if no javascript needed netsurf can do the job
 
-# qutebrowser
+
+# :: autojump
+TODO 
+https://gist.github.com/l4u/06502cf680b9a3817efddfb0a9a6ede8
+
+# :: qutebrowser
 set content.tls.certificate_errors load-insecurely
 # better way for this ?
 :set content.blocking.method both
 
 paru python-adblock
 
-set .config
+TODO define your own shortcut backspace and quick find /
+backup config
+DONE
+
+
+# :: set .config
 
 for starship
 for i3
@@ -49,12 +59,15 @@ for bash
 for alias
 
 TODO put some dracula theme everywhere
+DONE
 
 TODO save packages and sync to list of packages
+DONE via savepackage alias 
+TODO (also check nixOS)
 
 install proper vim from dotfiles
 
-public dots
+:: public dots
 git clone https://github.com/xkdots/dotfiles.git
 
 cd dotfiles
@@ -92,4 +105,9 @@ ctl + shift + c / v also work
 https://github.com/rothgar/awesome-tuis
 https://idempotent-desktop.netlify.app/
 
+
+:: research 
+
+check out nixOS
+https://github.com/ksevelyar/idempotent-desktop/blob/25eba689681ea02b961e1403f46593f7453c71c3/sys/aliases.nix
 
