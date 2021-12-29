@@ -15,9 +15,11 @@ argon2
 at-spi2-atk
 at-spi2-core
 atk
+atool
 attr
 audit
 autoconf
+autojump-rs
 automake
 avahi
 b43-firmware
@@ -80,6 +82,7 @@ flac
 flex
 fluidsynth
 fontconfig
+freeimage
 freetype2
 fribidi
 fuse-common
@@ -98,10 +101,12 @@ git
 glib-networking
 glib2
 glibc
+glu
 gmp
 gnu-free-fonts
 gnupg
 gnutls
+gobject-introspection-runtime
 googler
 gpgme
 gpm
@@ -123,6 +128,7 @@ gtk-engines
 gtk-update-icon-cache
 gtk2
 gtk3
+gtksourceview3
 guile
 gupnp
 gupnp-igd
@@ -142,6 +148,7 @@ icu
 imagemagick
 imath
 imlib2
+imv
 intel-ucode
 iproute2
 iptables
@@ -149,10 +156,12 @@ iputils
 iso-codes
 jack2
 jansson
+jasper
 js78
 json-c
 json-glib
 jsoncpp
+jxrlib
 kbd
 keyutils
 kitty
@@ -212,6 +221,7 @@ libglvnd
 libgme
 libgpg-error
 libgudev
+libheif
 libhubbub
 libibus
 libice
@@ -219,6 +229,7 @@ libid3tag
 libidn2
 libiec61883
 libindicator-gtk3
+libinih
 libinput
 libinstpatch
 libjpeg-turbo
@@ -249,6 +260,7 @@ libnl
 libnm
 libnma
 libnotify
+libnsgif
 libnsl
 libnsutils
 libofa
@@ -265,6 +277,7 @@ libproxy
 libpsl
 libpulse
 libraqm
+libraw
 libraw1394
 librsvg
 libsamplerate
@@ -293,6 +306,7 @@ libtirpc
 libtool
 libunistring
 libunwind
+liburing
 libusb
 libutempter
 libutf8proc
@@ -346,6 +360,7 @@ linux-firmware
 llvm-libs
 lm_sensors
 lmdb
+locatec
 lv2
 lxappearance
 lz4
@@ -357,6 +372,7 @@ man-db
 man-pages
 mcmojave-cursors
 md4c
+meld
 mesa
 meson
 minizip
@@ -415,6 +431,7 @@ picom
 pinentry
 pixman
 pkgconf
+plocate
 polkit
 polybar
 popt
@@ -425,8 +442,10 @@ psmisc
 python
 python-adblock
 python-appdirs
+python-cairo
 python-colorama
 python-decorator
+python-gobject
 python-jinja
 python-markupsafe
 python-more-itertools
@@ -500,6 +519,7 @@ texinfo
 thefuck
 tmux
 tracker3
+tree
 tslib
 ttf-iosevka-nerd
 ttf-unifont
@@ -511,6 +531,8 @@ util-linux
 util-linux-libs
 v4l-utils
 vid.stab
+vifm
+vim-dirdiff
 vim-runtime
 viu
 vmaf
@@ -518,6 +540,7 @@ vulkan-icd-loader
 wavpack
 wayland
 webrtc-audio-processing
+wget
 which
 wildmidi
 wireless_tools
