@@ -12,10 +12,10 @@ alias kk="fuck"
 
 alias paru="paru --bottomup"
 
-alias gits="git status"
-alias gita="git add *"
-alias gitcm="git commit -am'changes'"
-alias gitp="git push -u origin main"
+alias gs="git status"
+alias ga="git add *"
+alias gcm="git commit -am'changes'"
+alias gp="git push -u origin main"
 
 # File handling and moving around
 alias cd..="cd .."
@@ -37,7 +37,7 @@ alias lla="ls -lha"
 alias lr="ls -lrt"                          # list recent
 alias lv='vim `ls -tr | tail -1`'           # last vim TODO creer une fonction zsh
 alias vh=fzf-open-file-or-dir               # vim here
-alias gt='urxvt&'                           # new term here
+# alias gt='urxvt&'                           # new term here
 alias lra="ls -ra"
 alias ls="exa"
 #alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
@@ -213,7 +213,8 @@ alias s="ddgr -n 5"
 # copy with progress
 alias cpv='rsync -ah --progress'
 
-alias n="vifm"
+alias n="ranger"
+# alias n="vifm"
 # alias n='nnn'
 
 alias i="paru --bottomup"
