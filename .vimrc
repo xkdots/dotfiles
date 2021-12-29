@@ -1,4 +1,3 @@
-" vim:fdm=marker:fen:fdl=0
 """"" PLUGINS {{{1
 
 " installation
@@ -30,6 +29,8 @@ Plug 'tpope/vim-vinegar'              " netrw sensible defaults
 " Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'lvht/fzf-mru'|Plug 'junegunn/fzf'
+
 " deoplete:
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -184,6 +185,7 @@ set undodir=~/.vim/undo_files//     " directory for undo files
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
+
 
 """"" MOVEMENT {{{1
 

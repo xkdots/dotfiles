@@ -11,6 +11,9 @@ then only set the setxkbmap correctly
 see man xkeyboard-config
 if no menu key play with another option under righ thumb
 
+
+TODO swap caps and escape to keep feature 
+
 remove pico from i3/config
 
 proper font sizes in i3 and kitty
@@ -23,10 +26,13 @@ paru -S --needed base-devel
 paru -R vim
 paru -S gvim
 paru -S update-grub os-prober
-paru -S ripgrep fd fzf plocate tmux atool autojump
-paru -S qutebrowser fish starship nnn
+paru -S ripgrep fd fzf plocate tmux atool autojump-rs exa bat
+paru -S qutebrowser fish starship nnn vifm wget
 
 timedatectl set-ntp true
+
+:: vifm
+wget -P ~/.config/vifm/colors https://raw.githubusercontent.com/vifm/vifm-colors/master/dracula.vifm
 
 if no javascript needed netsurf can do the job
 
@@ -34,6 +40,13 @@ if no javascript needed netsurf can do the job
 # :: autojump
 TODO 
 https://gist.github.com/l4u/06502cf680b9a3817efddfb0a9a6ede8
+
+:: create some universal search and open
+TODO with locate and rg / fzf
+
+
+TODO why is alt + . not working? used as mod in i3?
+DONE semi solution esc + . seems to work ok
 
 # :: qutebrowser
 set content.tls.certificate_errors load-insecurely
@@ -46,10 +59,6 @@ TODO define your own shortcut backspace and quick find /
 backup config
 DONE
 
-
-:: create some universal search and open
-TODO with locate and rg / fzf
-
 # :: set .config
 
 for starship
@@ -57,7 +66,7 @@ for i3
 for kitty
 for fish
   TODO ù for confirm validate
-  SOL or usr ctrl f then enter
+  DONE SOL or usr ctrl f then enter
 for bash
 for alias
 
@@ -69,6 +78,10 @@ DONE via savepackage alias
 TODO (also check nixOS)
 
 install proper vim from dotfiles
+DONE
+
+once done use fzf install to set up keybiindings
+~/.vim/plugged/fzf/install --key-bindings
 
 :: public dots
 git clone https://github.com/xkdots/dotfiles.git

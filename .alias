@@ -8,8 +8,6 @@ alias gvim="gvim"
 alias vr='vim -c "Unite file_mru"'
 #alias xclip="xclip -selection c"
 
-alias n="nnn"
-
 alias kk="fuck"
 
 alias paru="paru --bottomup"
@@ -139,7 +137,7 @@ alias image="gpicview"
 alias c="cat"
 # alias v="vim"           # change this when have fasd
 # need fasd
-alias f='fasd'
+# alias f='fasd'
 # if mac
 #alias xclip='pbcopy'
 #alias v='fasd -e vim' # quick opening files with vim
@@ -188,10 +186,22 @@ alias installme="sudo pacman -U"
 #alias f='fasd -f' # file
 #alias z='fasd_cd -d' # cd, same functionality as j in autojump
 #alias zz='fasd_cd -d -i' # interactive directory jump
-alias j='fasd_cd -d' # cd, same functionality as j in autojump
+# alias j='fasd_cd -d' # cd, same functionality as j in autojump
 
-alias s="googler -j"
-alias d="ddgr -n 5"
+# try this
+alias jj="cd (cat ~/.local/share/autojump/autojump.txt | sort -nr | awk -F '\t' '{print \$NF}' | fzf +s)"
+
+alias up="sudo updatedb"
+alias va="vim (plocate / | fzf)"
+alias vl="vim (plocate . | fzf)"
+
+alias vv="vim -c 'FZFMru'"
+alias vr="vim -c 'FZFMru'"
+
+alias loc="plocate"
+
+alias sg="googler -j"
+alias s="ddgr -n 5"
 # ghq alias
 
 # alias ghq='/home/xkt/go/bin/ghq'
@@ -203,7 +213,10 @@ alias d="ddgr -n 5"
 # copy with progress
 alias cpv='rsync -ah --progress'
 
+alias n="vifm"
 # alias n='nnn'
+
+alias i="paru --bottomup"
 
 # alias pvim='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
 # alias g='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'

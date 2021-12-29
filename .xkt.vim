@@ -103,7 +103,7 @@ nnoremap [Leader]d mhyyp`hj
 nmap [Leader]c<space> mhyypkgci`hj
 nmap dc mhyypkgci`hj
 " TODO need to remap q to clean exit and macro to something else
-nnoremap ,q q
+nnoremap ,q :x<cr>
 " nnoremap <m-q> :up<cr>:q<cr>
 " nnoremap <Leader><tab> :b#<cr>
 nnoremap ,<tab> :b#<cr>
@@ -430,7 +430,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-nnoremap ,a :Unite file_mru<cr>
+nnoremap ,a q
 
 nnoremap ,gf :vsp <cfile><cr>
 nnoremap ,f :FZF<cr>
