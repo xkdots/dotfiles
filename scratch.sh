@@ -27,7 +27,7 @@ paru -R vim
 paru -S gvim
 paru -S update-grub os-prober
 paru -S ripgrep fd fzf plocate tmux atool autojump-rs exa bat
-paru -S qutebrowser fish starship nnn vifm wget
+paru -S qutebrowser fish starship nnn vifm wget ranger
 
 timedatectl set-ntp true
 
