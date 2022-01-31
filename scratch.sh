@@ -11,6 +11,16 @@ then only set the setxkbmap correctly
 see man xkeyboard-config
 if no menu key play with another option under righ thumb
 
+setxkbmap -layout fr -option caps:escape -option ctrl:swap_lalt_lctl_lwin
+
+config
+paru -S arandr firefox
+
+cd
+git clone https://github.com/xkdots/dotfiles
+cd dotfiles
+cp .alias .bashrc .fzf.bash .vimrc .xkt.vim ../
+cp -R .config ../
 
 TODO swap caps and escape to keep feature 
 
@@ -24,18 +34,29 @@ paru
 paru archlinux-keyring
 paru -S --needed base-devel
 paru -R vim
-paru -S gvim
-paru -S update-grub os-prober
-paru -S ripgrep fd fzf plocate tmux atool autojump-rs exa bat
-paru -S qutebrowser fish starship nnn vifm wget ranger
+paru -S gvim update-grub os-prober ripgrep fd fzf plocate tmux atool autojump-rs exa bat qutebrowser fish starship nnn vifm wget ranger
+paru -S code
+paru -S thefuck
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim -c "PlugInstall"
+
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+fisher install oh-my-fish/plugin-bang-bang
 
 timedatectl set-ntp true
+sudo vim /etc/default/grub
+sudo update-grub
 
 :: vifm
 wget -P ~/.config/vifm/colors https://raw.githubusercontent.com/vifm/vifm-colors/master/dracula.vifm
 
 if no javascript needed netsurf can do the job
 
+change default shell to fish
+chsh -s /usr/bin/fish
 
 # :: autojump
 TODO 
@@ -81,7 +102,7 @@ install proper vim from dotfiles
 DONE
 
 once done use fzf install to set up keybiindings
-~/.vim/plugged/fzf/install --key-bindings
+~/.vim/plugged/fzf/install --no-zsh --key-bindings
 
 :: public dots
 git clone https://github.com/xkdots/dotfiles.git
@@ -106,6 +127,20 @@ TODO save credentials
 try again vimb or uzbl
 
 add blackarch repo
+# Run https://blackarch.org/strap.sh as root and follow the instructions.
+$ curl -O https://blackarch.org/strap.sh
+
+# Verify the SHA1 sum
+$ echo 84a2981475b49d7880bb8c5727ebea64f9f22a7c strap.sh | sha1sum -c
+
+# Set execute bit
+$ chmod +x strap.sh
+
+# Run strap.sh
+$ sudo ./strap.sh
+
+# Enable multilib following https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib and run:
+$ sudo pacman -Syu
 DONE
 
 TODO homerow cursor navigation

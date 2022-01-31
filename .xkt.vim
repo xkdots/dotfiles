@@ -21,18 +21,26 @@ noremap <LeftRelease> "+y<LeftRelease>
 " all this is dangerous TODO make it clean
 
 map mm mm
-nmap ,m `m
+nmap gm `m
+nmap ,m vip
+
+nmap ,b <c-w>w
 
 nmap <space> v
 " nmap <space><space> V
 " vmap <space> y
 nmap g, <c-w>
-nmap ,<space> gcc
-xmap ,<space> gcc
-nmap ,p PPgccj
+nmap ,<space> gcc<esc>
+xmap ,<space> gcc<esc>
+
+vmap L <esc>V
+nmap ,c 0C
+vmap ,p ygVgcc<esc>gV<esc>p
+
 "nnoremap Ã§ %
 "xnoremap Ã§ %
 nmap gl $
+nmap gh 0
 "nmap Ã© {
 "vmap Ã© {
 "nmap Ã  }
@@ -126,6 +134,9 @@ nnoremap c! c/
 nnoremap v! v/
 nnoremap y! y/
 
+" execute current line in shell
+nnoremap X :.w !bash<cr>
+
 " on mac
 " map = /
 " nnoremap = /
@@ -159,7 +170,7 @@ nnoremap <PageUp> <c-b>
 " nnoremap % .n
 nnoremap <silent> gk :call cursor(0, virtcol('$')/2)<CR>
 vnoremap <silent> gk mh:call cursor(0, virtcol('$')/2)<CR>v`ho
-nnoremap gm :g//<cr>
+" nnoremap gm :g//<cr>
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
@@ -479,7 +490,8 @@ set fillchars=""
 nnoremap ,y "+y
 vnoremap ,y "+y
 nnoremap ,f :FZF<cr>
-nnoremap ,l :Unite locate -start-insert<cr>
+nnoremap ,l V
+" nnoremap ,l :Unite locate -start-insert<cr>
 " open terminal with current path
 nnoremap <silent> gt :<c-u>call system("i3-msg layout stacked; urxvt -cd " . expand("%:p:h") . "&")<cr>
 
