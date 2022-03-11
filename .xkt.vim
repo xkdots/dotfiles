@@ -352,6 +352,9 @@ command! LoadCscope call LoadCscope()
 autocmd! bufwritepost .vimrc source %
 autocmd! bufwritepost .xkt.vim source %
 
+" same with i3
+autocmd bufwritepost ~/.config/i3/config :silent !i3-msg restart ; notify-send "Reloaded i3 :)"
+
 " :!cscope -Rbq
 " :cs reset
 " check this out fast autoreload
