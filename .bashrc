@@ -13,8 +13,26 @@ alias q='exit'
 
 source ~/.alias
 
+# functions
+m() { mkdir -p "$@" && cd "$@"; }
+
 PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# DEV specifics
+export PATH=~/.local/bin:"$PATH"
+
+
+# sumup
+alias solomini='while [ ! -w /dev/ttyACM0 ] ; do echo sleeping ; sleep 0.5; done ; echo "- - - - - - connected! - - - - - -" ;minicom -D /dev/ttyACM0 -b 115200'
+alias solominiu='while [ ! -w /dev/ttyUSB0 ] ; do echo sleeping ; sleep 0.5; done ; echo "- - - - - - connected! - - - - - -" ;minicom -D /dev/ttyUSB0 -b 115200'
 
 

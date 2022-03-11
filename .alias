@@ -31,6 +31,7 @@ alias cp="cp -i"
 alias fixdir="find . -type d -exec chmod 755 {} +"
 alias fixfiles="find . -type f -exec chmod 644 {} +"
 alias grep="grep -i"
+alias lrt="ls -lrt"
 alias ll="ls -lh"
 alias la="ls -Ca"
 alias lla="ls -lha"
@@ -85,11 +86,17 @@ alias vimx='vim --cmd "set runtimepath^=/home/xavier/.vim" \
                --cmd "set runtimepath+=/home/xavier/.ghq/bitbucket.org/whitewand/vimconf" \
                -u /home/xavier/.ghq/bitbucket.org/whitewand/vimconf/_vimrc'
 alias uxconf="vim $HOME/.Xdefaults"
-alias i3conf="vim $HOME/.i3/config"
+alias i3conf="vim $HOME/.config/i3/config"
 alias keyconf="vim $HOME/.xbindkeysrc"
+
+# sound problems
+# pulseaudio -v
+# pavucontrol and unmute set everything
 
 # to create functions use zshrc
 
+alias o="rifle"
+alias od="nautilus ."
 # my precious
 alias c="cat"
 alias v="vim"           # change this when have fasd
@@ -98,8 +105,11 @@ alias v="vim"           # change this when have fasd
 alias see="peco"
 # alias x="peco | xclip"
 #alias locate="sudo updatedb; locate"
+
+alias locate="locate -d $HOME/Documents/locate.local"
+
 alias lf="locate / | fzf"
-alias loc="locate"
+alias loc="plocate"
 #alias vz="vim fzfa)"
 # alias vf="vim `fzf`"
 alias fz="locate / | fzf"
@@ -128,6 +138,10 @@ alias bigfld="du -Sh | sort -rh | head -n 15"
 alias bigfile="ls -lSh"
 #https://blog.dbrgn.ch/2012/10/23/recompile-vim-on-arch-linux/
 #https://gist.github.com/MicahElliott/3048622
+
+# clone screen
+# xrandr --current
+alias clonescreen="xrandr --output HDMI-2 --same-as eDP-1"
 
 # my precious
 alias video="mplayer -zoom"
@@ -208,7 +222,7 @@ alias s="ddgr -n 5"
 # alias ghq='/home/xavier/Projects/gocode/bin/ghq'
 #alias ghl='cd $(ghq list -p | fzf)'
 #alias gho='gh-open $(ghq list -p | fzf)'
-#alias ghf='firefox http://www.yasiv.com/github/#/ &'
+# alias ghf='firefox http://www.yasiv.com/github/#/ &'
 
 # copy with progress
 alias cpv='rsync -ah --progress'
@@ -228,6 +242,8 @@ alias ff='find . -not -iwholename "*.git*" -type f | fzf'
 # alias gd='cd $(find . -type d | fzf)'
 # alias lcd='cd -- "$(ls -dt -- */ | head -1)"'
 alias x='history | tail -1 | cut -d" " -f5- | xclip -i'
+alias h='history | fzf | xclip'
+alias hh='tldr'
 
 #alias sa='source ~/.alias'
 
@@ -262,6 +278,7 @@ alias wifi="~/wifi_home.sh"
 
 #use the extract function
 #combine with the rest of the magic on the work vm
+alias extract='unp'
 
 
 #gpg --symmetric --cipher-algo AES256 -o my_encrypted_file somefile
@@ -293,6 +310,12 @@ alias how='eg'
 # $ source /opt/anaconda2/bin/deactivate root
 alias spy='source /opt/anaconda2/bin/activate root'
 alias nopy='source /opt/anaconda2/bin/activate root'
+
+# sumup
+alias solomini='sudo minicom -D /dev/ttyACM0 -b 115200'
+alias solominiu='sudo minicom -D /dev/ttyUSB0 -b 115200'
+
+
 
 # chezmoi maintenance
 # chezmoi init --apply --verbose https://github.com/username/dotfiles.git

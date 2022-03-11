@@ -23,6 +23,7 @@ Plug 'tpope/vim-rhubarb'              " github for fugitive
 "Plug 'tpope/vim-rails'                " rails plugin
 Plug 'tpope/vim-vinegar'              " netrw sensible defaults
 "Plug 'sjl/badwolf'
+Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'slashmili/alchemist.vim'        " alchemist-server integration for mix projects
 " Plug '/usr/local/opt/fzf'
 " Plug '/opt/homebrew/bin/fzf'
@@ -30,6 +31,7 @@ Plug 'tpope/vim-vinegar'              " netrw sensible defaults
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lvht/fzf-mru'|Plug 'junegunn/fzf'
+" Plug 'dominickng/fzf-session'|Plug 'junegunn/fzf'
 
 " deoplete:
 " if has('nvim')
@@ -217,6 +219,13 @@ set list listchars=trail:· " use · to indicate trailing chars
 "set relativenumber         " relative line numbers
 "set showcmd                " show current command in status line
 
+" set expandtab
+" set tabstop=4
+" set shiftwidth=4
+
+" set listchars=tab:\ \ ,eol:$
+set listchars=tab:\ \ 
+
 """ Use 24-bit colours
 if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -230,6 +239,7 @@ syntax on " syntax highlight
 
 "let g:onedark_terminal_italics=1
 "colorscheme onedark
+colorscheme dracula
 
 """ Fix for cursor when running under tmux
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor

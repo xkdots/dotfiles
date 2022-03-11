@@ -22,8 +22,8 @@ set $mod Mod1
 set $mod4 Mod4
 
 # Font for window titles. Will also be used by the bar.
-#font pango:monospace 15
-font pango:monospace 8
+font pango:monospace 15
+#font pango:monospace 8
 #11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -32,9 +32,13 @@ font pango:monospace 8
 
 workspace_auto_back_and_forth yes
 
+bindsym $mod+Tab workspace back_and_forth
+
 # start a terminal. We use kitty.
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod4+Return exec i3-sensible-terminal
+bindsym $mod+Return split h, exec i3-sensible-terminal
+bindsym $mod4+Return split h, exec i3-sensible-terminal
+bindsym $mod4+shift+Return split v, exec i3-sensible-terminal
+bindsym $mod+shift+Return split v, exec i3-sensible-terminal
 
 # kill focused window
 #bindsym $mod+Shift+q kill
@@ -49,12 +53,27 @@ bindsym $mod+q kill
 # defined in .desktop file, with their description, and corresponding
 # icons
 #bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
-bindsym $mod4+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
-bindsym $mod+space exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
+# bindsym $mod4+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
+# clipboard
+bindsym $mod+y exec --no-startup-id roficlip -theme Monokai -icon-theme "Tela-circle" -show-icons
+bindsym $mod+c exec --no-startup-id roficlip -theme Monokai -icon-theme "Tela-circle" -show-icons
+
+# combi
+# bindsym $mod+space exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
+# rofi -show combi -combi-modi "windowcd,window,drun,run" -modi combi --theme Monokai -icon-theme  "Tela-circle" -show-icons
+bindsym $mod+space exec --no-startup-id rofiall
 
 # The other mode search for applications in /usr/bin or /usr/sbin.
 # This should only be used if a program lacks a .desktop file.
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
+# bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
+
+# bookmarks 
+bindsym $mod+twosuperior exec --no-startup-id rofi -show firefox_bookmarks -modi "firefox_bookmarks:/home/x/ghq/github.com/milosz/rofi-firefox-bookmarks/rofi_firefox_bookmarks.sh" -theme Monokai -show-icons
+
+# files
+# always up to date locate
+exec --no-startup-id watch -n1 updatedb --require-visibility 0 -o $HOME/Documents/locate.local
+
 
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
@@ -64,13 +83,31 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
+new_window 1pixel
 gaps inner 10
 
 #Compositor. This helps in transparency and fading.
 # with fading
-#exec_always picom -f
+# exec_always picom -f
 # without
-#exec_always picom
+exec_always picom
+
+# clipboard manager
+exec clipster -d
+
+# password
+# https://github.com/nwallace/dotfiles/blob/master/scripts/bin/rofi-pass
+
+# screenshot manager
+# see https://github.com/carnager/teiler
+bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym Shift+Print exec pinta, [class=pinta] focus
+
+# expose like
+# exec --no-startup-id i3-overview
+
+# rename current workspace
+bindsym $mod+u exec i3-input -F "rename workspace to \"$(i3-msg -t get_workspaces | jq -r \"map(select(.focused))[0].num\"):%s\"" -P 'New name for this workspace: '
 
 # Lock Screen This will yield a black lock screen, which
 # can be customized to your liking.
@@ -82,8 +119,11 @@ bindsym $mod+x exec betterlockscreen -l
 #Reboot Machine
 #bindsym $mod+r exec systemctl reboot
 
+# https://faq.i3wm.org/question/239/how-do-i-suspendlockscreen-and-logout.1.html
 # Suspend the system to RAM (needs swap space)
-#bindsym $mod+s exec systemctl suspend
+# bindsym $mod+Shift+BackSpace exec betterlockscreen -l ; systemctl suspend
+bindsym $mod+Delete exec "sh betterlockscreen -l && sleep 0.5 && systemctl hibernate"
+bindsym $mod+Escape exec betterlockscreen -l
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -104,15 +144,17 @@ exec --no-startup-id nm-applet
 # These are examples if you would like to use pactl. We will not use this,
 # but rather alsamixer.
 #set $refresh_i3status killall -SIGUSR1 i3status
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 #Volume Control in ALG i3
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+# bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioMute exec pactl set-sink-mute 3 toggle
+
 
 ##Brightness Control in ALG i3
 bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
@@ -125,10 +167,14 @@ floating_modifier $mod
 # used for navigation in the window manager
 
 # 1A] change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+
+# bindsym $mod+colon focus left
+# bindsym $mod+semicolon focus right
+
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 
 # 1B] alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -137,10 +183,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # 2A] move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # 2B] alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -149,15 +195,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # 3] split in horizontal orientation
-bindsym $mod4+h split h
+# bindsym $mod4+h split h
 
 # 4] split in vertical orientation
-bindsym $mod4+v split v
+# bindsym $mod4+v split v
 
 # 5] enter fullscreen mode for the focused container
-bindsym $mod4+f fullscreen toggle
-bindsym $mod+s fullscreen toggle
+# bindsym $mod4+f fullscreen toggle
+bindsym $mod+m fullscreen toggle
 bindsym F11 fullscreen toggle
+bindsym $mod+F11 polybar-msg cmd toggle
+
+bindsym $mod+s exec echo "" | rofi -dmenu | xargs -I{} xdg-open https://www.google.de/search?q={}
 
 # 6] change container layout (stacked, tabbed, toggle split)
 bindsym $mod4+s layout stacking
@@ -190,6 +239,48 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# anything on 9 and 10 is floating
+for_window [ workspace="9" ] floating enable
+for_window [ workspace="10" ] floating enable
+for_window [ class="pinta" ] fullscreen enable
+
+for_window [class="i3-overview"] floating enable
+for_window [class="i3-overview"] sticky enable
+no_focus [class="i3-overview"]
+
+
+# quick focus firefox and vim
+bindsym F9 [class="firefox"] focus
+bindsym F10 [class="kitty" title="VIM$"] focus
+# $mod+a 
+
+# for_window [instance="scratchpad"] move window to scratchpad, scratchpad show
+#
+# for_window [class="bg_browser"] move scratchpad
+
+# for_window [class="bg_browser"] floating enable
+# for_window [class="bg_browser"] move position 277 156
+# for_window [class="bg_browser"] resize set 1366 768
+# for_window [class="bg_browser"] border pixel 3
+# exec_always --no-startup-id firefox --class="bg_browser" &
+
+# bindsym $sup+grave [class="bg_browser"] scratchpad show
+
+# bindsym $mod+b exec --no-startup-id firefox --class="fg_browser"
+# bindsym $mod+b exec --no-startup-id firefox
+
+
+# quick access
+bindsym $mod+F2 exec --no-startup-id kitty -e ranger -d ~/Downloads
+# bindsym $mod+F1 exec --no-startup-id firefox -name scratchpad
+
+# scratchpad
+# bindsym twosuperior [class="bg_browser"] scratchpad show
+bindsym twosuperior scratchpad show
+# bindsym Ctrl+twosuperior scratchpad show
+bindsym $mod+Shift+twosuperior move scratchpad
+# http://christian.amsuess.com/blog/config/changed_to_i3wm/
+
 # 10] switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym F1 workspace number $ws1
@@ -206,6 +297,19 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $mod+n workspace next
+bindsym $mod+shift+n move to workspace next, workspace next
+bindsym $mod+p workspace prev
+bindsym $mod+shift+p move to workspace prev, workspace prev
+bindsym $mod+Next workspace next
+bindsym $mod+Prior workspace prev
+bindsym $mod+o exec --no-startup-id /home/x/ghq/github.com/jytrowbridge/i3-next-available-workspace/next_available_ws.sh
+bindsym $mod+shift+o exec --no-startup-id /home/x/ghq/github.com/jytrowbridge/i3-next-available-workspace/next_available_ws.sh -m
+
+
+# bindsym $mod+shift+p move workspace to output up
+bindsym shift+F11 move workspace to output up
+
 # 11] move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym Shift+F1 move container to workspace number $ws1
@@ -221,6 +325,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
 
 # 12A] reload the configuration file
 bindsym $mod+Shift+c reload
@@ -241,6 +346,10 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym i move position 0px 100px
+        bindsym o move position 1200px 100px
+        bindsym u move position 500px 100px
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -279,7 +388,7 @@ bindsym $mod+r mode "resize"
 # defined keybinding, on a certain workspace, without
 # touching program launcher. Assign Programs to respective
 # workspaces.
-#bindsym $mod+b workspace 5; exec firefox
+# bindsym $mod+b workspace 5; exec firefox
 
 
 #Multi Monitor (Dual Monitor, extended monitor)
@@ -288,12 +397,25 @@ bindsym $mod+r mode "resize"
 #eDP-X is the display used in Laptops.
 #HDMI-X is display used in Desktop connected to monitor with HDMI Cable.
 #VGA-X is display used in Desktop connected to monitor with VGA Cable.
-exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
+
+# exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 -s 2560x1440
+exec --no-startup-id xrandr --output eDP-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off
+# exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
+
+# exec --no-startup-id autorandr --change
+
+# autorandr --change myt14layout
 
 # put this in bashrc?
 # exec setxkbmap -option
-exec setxkbmap -layout fr -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
+# exec setxkbmap -layout fr,us -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option grp:rctrl_toggle
+exec setxkbmap -layout fr,us -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option grp:shifts_toggle
+# -option altwin:menu_win
 # exec setxkbmap -layout fr -option caps:super -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
+
+
+# Display Wallpaper, always. again
+exec feh --bg-fill /usr/share/backgrounds/i3/wall.png
 
 # exec_always setxkbmap -option
 # exec_always setxkbmap -layout fr -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
