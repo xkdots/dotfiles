@@ -36,7 +36,10 @@ alias solomini='while [ ! -w /dev/ttyACM0 ] ; do echo sleeping ; sleep 0.5; done
 alias solominiu='while [ ! -w /dev/ttyUSB0 ] ; do echo sleeping ; sleep 0.5; done ; echo "- - - - - - connected! - - - - - -" ;minicom -D /dev/ttyUSB0 -b 115200'
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5f0f26cd0b3c586faab160b338cc9e7bb67f154b
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -51,4 +54,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5f0f26cd0b3c586faab160b338cc9e7bb67f154b
