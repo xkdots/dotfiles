@@ -126,7 +126,7 @@ bindsym $mod+shift+Delete exec "sh betterlockscreen -l && sleep 0.5 && systemctl
 bindsym $mod+Escape exec betterlockscreen -l
 
 #tweak for delete word 
-bindsym --release $mod+Delete exec --no-startup-id xdotool key --clearmodifiers "ctrl+Delete"
+# bindsym --release $mod+Delete exec --no-startup-id xdotool key --clearmodifiers "ctrl+Delete"
 # bindsym --release $mod+Delete exec --no-startup-id xdotool key --clearmodifiers "Shift+Home"
 # bindsym --release $mod+Left exec --no-startup-id xdotool key --clearmodifiers "Home"
 
@@ -427,6 +427,9 @@ exec --no-startup-id xrandr --output eDP-1 --primary --mode 2560x1440 --pos 0x0 
 # put this in bashrc?
 # exec setxkbmap -option
 # exec setxkbmap -layout fr,us -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option grp:rctrl_toggle
+# install touchcursor-linux from git and setup for your keyboard then
+# 
+exec_always systemctl --user start touchcursor.service
 exec setxkbmap -layout fr,us -option caps:escape -option ctrl:swap_lalt_lctl_lwin -option grp:shifts_toggle
 # -option altwin:menu_win
 # exec setxkbmap -layout fr -option caps:super -option ctrl:swap_lalt_lctl_lwin -option altwin:menu_win
