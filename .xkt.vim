@@ -284,9 +284,10 @@ nmap <space>s  <Plug>(vimshell_switch)
 " expand all folds
 nnoremap ea zR
 " open path in current line in vimfiler (use with everything)
-nnoremap g<cr> yy:q<cr>:enew<cr>:VimFiler <c-r>"<cr>
+" nnoremap g<cr> yy:q<cr>:enew<cr>:VimFiler <c-r>"<cr>
 " nnoremap <space><tab> :b#<cr>
-nnoremap <c-s-e> :VimFilerBufferDir<cr>
+nnoremap <c-e> :!ranger %:p:h<cr>
+" nnoremap <c-s-e> :VimFilerBufferDir<cr>
 " put split on left
 nnoremap gL <c-w>L
 nnoremap mL <c-w>T
