@@ -4,7 +4,7 @@
 #alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
 alias vi="vim"
 alias gvim="gvim"
-alias vr='vim +Startify'
+alias vr='vim -c "Unite file_mru"'
 #alias xclip="xclip -selection c"
 alias sshon="sudo systemsetup -setremotelogin on"
 alias sshoff="sudo systemsetup -setremotelogin off"
@@ -149,36 +149,10 @@ function runvim() {
 }
 #alias ve=runvim
 # alias e=nvim
-# alias e="fasd -f -e nvim"
-alias e="nvim -c History"
-alias er="nvim -c History"
-alias eh="nvim -c History"
-alias nr="nvim -c History"
+alias e="fasd -f -e nvim"
 alias nv=nvim
 alias vim=nvim
 alias v=nvim
-alias ns="nvim -c Startify"
-# with alacritty bindings in /Users/xavierkauffmann/.config/alacritty/alacritty.yml
-# command-f 
-alias :FZF="nvim -c FZF"
-# command-shift-f
-alias :Lfcd="nvim -c Lfcd"
-# mapped to command-r
-alias :History="nvim -c History"
-alias History="nvim -c History"
-# command-g 
-alias :GitFiles="nvim -c 'Telescope git_files'"
-alias GitFiles="nvim -c 'Telescope git_files'"
-# command-shift-g
-# lazy git
-# command-shift-p
-alias :Commands="nvim -c 'Telescope commands'"
-alias Commands="nvim -c 'Telescope commands'"
-# command-shift-r
-alias :Rg="nvim -c 'Rg'"
-alias Rg="nvim -c 'Rg'"
-
-# alias vv="nvim +GitFiles"
 # alias vim=runvim
 # alias ve="vim --remote-tab-silent"
 
@@ -317,26 +291,25 @@ alias l="lsd  --group-dirs first -A"
 alias ll="lsd  --group-dirs first -Al"
 alias lt="lsd  --group-dirs last -A --tree"
 
-alias rmr="rm -rf"
-
-# alias sf="source ~/.config/fish/config.fish"
-# alias st="tmux source ~/.config/tmux/tmux.conf"
-alias ta="tmux a"
-# alias tat="tmux attach -t"
-alias td="t dotfiles"
-# alias tn="tmux new -s (pwd | sed 's/.*\///g')"
-# alias u="~/bin/update.sh"
-# alias v="nvim +GitFiles"
-# alias :GitFiles="nvim +GitFiles"
-alias vfzf="nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p -w 100 --reverse --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
-# alias va="nvim ~/.config/alacritty/alacritty.yml"
-# alias vf="nvim ~/.config/fish/config.fish"
-# alias vp="nvim package.json"
-# alias vpc="nvim +PlugClean"
-# alias vpi="nvim +PlugInstall"
-# alias vpu="nvim +PlugUpdate"
-# alias vpug="nvim +PlugUpgrade"
-# alias vt="nvim ~/.config/tmux/tmux.conf"
+abbr rmr "rm -rf"
+abbr sf "source ~/.config/fish/config.fish"
+abbr st "tmux source ~/.config/tmux/tmux.conf"
+abbr ta "tmux a"
+abbr tat "tmux attach -t"
+abbr td "t dotfiles"
+abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
+abbr u "~/bin/update.sh"
+abbr v "nvim +GitFiles"
+abbr :GitFiles "nvim +GitFiles"
+abbr vfzf "nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p -w 100 --reverse --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
+abbr va "nvim ~/.config/alacritty/alacritty.yml"
+abbr vf "nvim ~/.config/fish/config.fish"
+abbr vp "nvim package.json"
+abbr vpc "nvim +PlugClean"
+abbr vpi "nvim +PlugInstall"
+abbr vpu "nvim +PlugUpdate"
+abbr vpug "nvim +PlugUpgrade"
+abbr vt "nvim ~/.config/tmux/tmux.conf"
 
 # TODO check out espanso ?
 

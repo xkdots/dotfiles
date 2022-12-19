@@ -158,25 +158,13 @@ alias nv=nvim
 alias vim=nvim
 alias v=nvim
 alias ns="nvim -c Startify"
-# with alacritty bindings in /Users/xavierkauffmann/.config/alacritty/alacritty.yml
-# command-f 
+# with alacritty bindings
+# mapped to command-f in /Users/xavierkauffmann/.config/alacritty/alacritty.yml
 alias :FZF="nvim -c FZF"
-# command-shift-f
-alias :Lfcd="nvim -c Lfcd"
+# mapped to command-f ialias :Lfcd="nvim -c Lfcd"
 # mapped to command-r
 alias :History="nvim -c History"
-alias History="nvim -c History"
-# command-g 
 alias :GitFiles="nvim -c 'Telescope git_files'"
-alias GitFiles="nvim -c 'Telescope git_files'"
-# command-shift-g
-# lazy git
-# command-shift-p
-alias :Commands="nvim -c 'Telescope commands'"
-alias Commands="nvim -c 'Telescope commands'"
-# command-shift-r
-alias :Rg="nvim -c 'Rg'"
-alias Rg="nvim -c 'Rg'"
 
 # alias vv="nvim +GitFiles"
 # alias vim=runvim

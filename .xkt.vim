@@ -9,6 +9,8 @@ setglobal wildmenu
 " TODO find good use for this one
 " noremap Ã¹ .
 
+set listchars=tab:\ \ 
+
 syntax on
 
 set tabstop=2 shiftwidth=2 expandtab
@@ -21,7 +23,7 @@ noremap <LeftRelease> "+y<LeftRelease>
 " all this is dangerous TODO make it clean
 
 map mm mm
-nmap ,m `m
+nmap gm `m
 
 nmap <space> v
 " nmap <space><space> V
@@ -103,7 +105,8 @@ nnoremap [Leader]d mhyyp`hj
 nmap [Leader]c<space> mhyypkgci`hj
 nmap dc mhyypkgci`hj
 " TODO need to remap q to clean exit and macro to something else
-nnoremap ,q q
+nnoremap ,m q
+nnoremap ,q <esc>:q!<cr>
 " nnoremap <m-q> :up<cr>:q<cr>
 " nnoremap <Leader><tab> :b#<cr>
 nnoremap ,<tab> :b#<cr>
@@ -159,7 +162,7 @@ nnoremap <PageUp> <c-b>
 " nnoremap % .n
 nnoremap <silent> gk :call cursor(0, virtcol('$')/2)<CR>
 vnoremap <silent> gk mh:call cursor(0, virtcol('$')/2)<CR>v`ho
-nnoremap gm :g//<cr>
+nnoremap g= :g//<cr>
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
@@ -243,6 +246,7 @@ xnoremap y y`]
 
 " Backspace: Delete selected and go into insert mode
 xnoremap <bs> c
+imap <Esc><BS> <C-w>
 
 " .: repeats the last command on every line
 xnoremap . :normal.<cr>
@@ -279,6 +283,7 @@ nnoremap <c-s-e> :VimFilerBufferDir<cr>
 nnoremap gL <c-w>L
 nnoremap mL <c-w>T
 " copy path to clipboard and open in vim use it in unite everything
+nmap ,cp :let @+=expand("%:p")<cr>
 " nnoremap gt yy:e <c-r>"<bs><cr>
 vnoremap gs y:OpenBrowserSmartSearch <c-r>"<cr>
 " reopen last file
@@ -421,7 +426,7 @@ nnoremap H ^
 nnoremap L $
 " nnoremap Â² :x<cr>
 
-cnoremap W w !sudo tee %
+cnoremap WW w !sudo tee %
 vnoremap <space> "*y
 
 " reopen last position cursor
@@ -432,17 +437,18 @@ endif
 nnoremap ,a :Unite file_mru<cr>
 
 nnoremap ,gf :vsp <cfile><cr>
+nnoremap ,r :History<cr>
 nnoremap ,f :FZF<cr>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
-"set undofile
+" set undofile
 "set autowrite
 "set autowriteall
 "set nofoldenable
 "
 "set backupdir=.backup/,~/.backup/,/tmp//
 "set directory=.swp/,~/.swp/,/tmp//
-"set undodir=.undo/,~/.undo/,/tmp//
+" set undodir=.undo/,~/.undo/,/tmp//
 
 " vertical split separator get out!!!
 set fillchars=""
@@ -475,6 +481,7 @@ set fillchars=""
 "     exe "resize" . (min([vmax, 60]))
 " endfunction
 
+nnoremap ,cd :cd %:p:h<cr>
 nnoremap ,y "+y
 vnoremap ,y "+y
 nnoremap ,f :FZF<cr>
@@ -582,6 +589,8 @@ endif
 if maparg('<leader>*', 'v') == ''
   vnoremap <leader>* :<C-u>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 endif
+
+" nnoremap <c-d> <esc>:FloatermToggle<cr>
 
 " load my bundles
 " NeoBundle 'ujihisa/unite-locate'
