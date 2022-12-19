@@ -3,6 +3,7 @@
 #alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
 #alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
 alias vi="vim"
+alias v="vim"
 alias gvim="gvim"
 alias vr='vim +Startify'
 #alias xclip="xclip -selection c"
@@ -18,6 +19,15 @@ alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
 # for intel x86_64 brew
 alias intelbrew='arch -x86_64 /usr/local/homebrew/bin/brew'
 
+alias kk="fuck"
+
+alias paru="paru --bottomup"
+
+alias gs="git status"
+alias ga="git add *"
+alias gcm="git commit -am'changes'"
+alias gp="git push -u origin main"
+
 # File handling and moving around
 alias cd..="cd .."
 # alias cdu="cd .."
@@ -32,14 +42,16 @@ alias cp="cp -i"
 alias fixdir="find . -type d -exec chmod 755 {} +"
 alias fixfiles="find . -type f -exec chmod 644 {} +"
 alias grep="grep -i"
+alias lrt="ls -lrt"
 alias ll="ls -lh"
 alias la="ls -Ca"
 alias lla="ls -lha"
 alias lr="ls -lrt"                          # list recent
 alias lv='vim `ls -tr | tail -1`'           # last vim TODO creer une fonction zsh
 alias vh=fzf-open-file-or-dir               # vim here
-alias gt='urxvt&'                           # new term here
+# alias gt='urxvt&'                           # new term here
 alias lra="ls -ra"
+alias ls="exa"
 #alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
 alias mkdir="mkdir -p"
 alias mv="mv -i"
@@ -85,11 +97,17 @@ alias vimx='vim --cmd "set runtimepath^=/home/xavier/.vim" \
                --cmd "set runtimepath+=/home/xavier/.ghq/bitbucket.org/whitewand/vimconf" \
                -u /home/xavier/.ghq/bitbucket.org/whitewand/vimconf/_vimrc'
 alias uxconf="vim $HOME/.Xdefaults"
-alias i3conf="vim $HOME/.i3/config"
+alias i3conf="vim $HOME/.config/i3/config"
 alias keyconf="vim $HOME/.xbindkeysrc"
+
+# sound problems
+# pulseaudio -v
+# pavucontrol and unmute set everything
 
 # to create functions use zshrc
 
+alias o="rifle"
+alias od="nautilus ."
 # my precious
 alias c="cat"
 alias v="vim"           # change this when have fasd
@@ -100,7 +118,8 @@ alias rg="rg -i"
 # alias x="peco | xclip"
 #alias locate="sudo updatedb; locate"
 alias lff="locate / | fzf"
-alias loc="locate"
+alias locate="locate -d $HOME/Documents/locate.local"
+alias loc="plocate"
 #alias vz="vim fzfa)"
 # alias vf="vim `fzf`"
 alias fz="locate / | fzf"
@@ -130,6 +149,10 @@ alias bigfile="ls -lSh"
 #https://blog.dbrgn.ch/2012/10/23/recompile-vim-on-arch-linux/
 #https://gist.github.com/MicahElliott/3048622
 
+# clone screen
+# xrandr --current
+alias clonescreen="xrandr --output HDMI-2 --same-as eDP-1"
+
 # my precious
 alias video="mplayer -zoom"
 alias pdf="zathura"
@@ -138,15 +161,15 @@ alias image="gpicview"
 alias c="cat"
 # alias v="vim"           # change this when have fasd
 # need fasd
-alias f='fasd'
+# alias f='fasd'
 # if mac
-alias xclip='pbcopy'
+#alias xclip='pbcopy'
 #alias v='fasd -e vim' # quick opening files with vim
 #alias vv='f -e "vim --servername XKT --remote-tab-silent "'
 #alias vim="vim --servername XKT"
-function runvim() {
-    vim --servername XKT --remote-tab-silent $@ && i3-msg "[title=VIM] focus"
-}
+#function runvim() {
+#    vim --servername XKT --remote-tab-silent $@ && i3-msg "[title=VIM] focus"
+#}
 #alias ve=runvim
 # alias e=nvim
 # alias e="fasd -f -e nvim"
@@ -185,6 +208,9 @@ alias Rg="nvim -c 'Rg'"
 alias savei3='i3-save-tree --workspace 2 > ~/.i3/workspace-2.json'
 alias restorei3='i3-msg "workspace 2; append_layout ~/.i3/workspace-2.json"'
 
+alias savepackages="pacman -Qq > myarchpackages.txt"
+# alias restorepackages="sudo pacman --noconfirm -S --needed $(comm -12 <(pacman -Slq|sort) <(sort myarchpackages.txt) )"
+
 alias y="yaourt --noconfirm"
 alias removepac="yaourt -Rcs"
 alias yr="yaourt -Rcs"
@@ -214,21 +240,38 @@ alias installme="sudo pacman -U"
 #alias f='fasd -f' # file
 #alias z='fasd_cd -d' # cd, same functionality as j in autojump
 #alias zz='fasd_cd -d -i' # interactive directory jump
-alias j='fasd_cd -d' # cd, same functionality as j in autojump
+# alias j='fasd_cd -d' # cd, same functionality as j in autojump
 
-alias s="googler -j"
+# try this
+alias jj="cd (cat ~/.local/share/autojump/autojump.txt | sort -nr | awk -F '\t' '{print \$NF}' | fzf +s)"
+
+alias up="sudo updatedb"
+alias va="vim (plocate / | fzf)"
+alias vl="vim (plocate . | fzf)"
+
+alias vv="vim -c 'FZFMru'"
+alias vr="vim -c 'FZFMru'"
+
+alias loc="plocate"
+
+alias sg="googler -j"
+alias s="ddgr -n 5"
 # ghq alias
 
 # alias ghq='/home/xkt/go/bin/ghq'
 # alias ghq='/home/xavier/Projects/gocode/bin/ghq'
-alias ghl='cd $(ghq list -p | fzf)'
-alias gho='gh-open $(ghq list -p | fzf)'
-alias ghf='firefox http://www.yasiv.com/github/#/ &'
+#alias ghl='cd $(ghq list -p | fzf)'
+#alias gho='gh-open $(ghq list -p | fzf)'
+# alias ghf='firefox http://www.yasiv.com/github/#/ &'
 
 # copy with progress
 alias cpv='rsync -ah --progress'
 
+alias n="ranger"
+# alias n="vifm"
 # alias n='nnn'
+
+alias i="paru --bottomup"
 
 # alias pvim='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
 # alias g='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
@@ -239,6 +282,8 @@ alias ff='find . -not -iwholename "*.git*" -type f | fzf'
 # alias gd='cd $(find . -type d | fzf)'
 # alias lcd='cd -- "$(ls -dt -- */ | head -1)"'
 alias x='history | tail -1 | cut -d" " -f5- | xclip -i'
+alias h='history | fzf | xclip'
+alias hh='tldr'
 
 #alias sa='source ~/.alias'
 
@@ -275,6 +320,7 @@ alias wifi="~/wifi_home.sh"
 
 #use the extract function
 #combine with the rest of the magic on the work vm
+alias extract='unp'
 
 
 #gpg --symmetric --cipher-algo AES256 -o my_encrypted_file somefile
@@ -340,7 +386,10 @@ alias vfzf="nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p -w 
 
 # TODO check out espanso ?
 
+# sumup
 alias solo="/Users/xavierkauffmann/Projects/solo-ul-flash-mac/detect.sh"
+alias solomini='sudo minicom -D /dev/ttyACM0 -b 115200'
+alias solominiu='sudo minicom -D /dev/ttyUSB0 -b 115200'
 
 # chezmoi maintenance
 # chezmoi init --apply --verbose https://github.com/username/dotfiles.git
