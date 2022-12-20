@@ -336,18 +336,18 @@ alias how='eg'
 # howdoi et s
 
 # Global aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g C='| wc -l'
-alias -g H='| head'
-# alias -g L="| less"
-alias -g L="| fzf | xclip"
-alias -g Z="| fzf | xclip"
-alias -g N="| /dev/null"
-alias -g S='| sort'
-alias -g X='| xclip'
-alias -g G='| grep' # now you can do: ls foo G something
+# alias -g ...='../..'
+# alias -g ....='../../..'
+# alias -g .....='../../../..'
+# alias -g C='| wc -l'
+# alias -g H='| head'
+# # alias -g L="| less"
+# alias -g L="| fzf | xclip"
+# alias -g Z="| fzf | xclip"
+# alias -g N="| /dev/null"
+# alias -g S='| sort'
+# alias -g X='| xclip'
+# alias -g G='| grep' # now you can do: ls foo G something
 # alias -g X='| peco | xclip'
 # alias -g F='| peco | xclip'
 
