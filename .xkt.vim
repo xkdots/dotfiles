@@ -24,24 +24,17 @@ noremap <LeftRelease> "+y<LeftRelease>
 
 map mm mm
 nmap gm `m
-nmap ,m vip
-nmap ,b <c-w>w
 
 nmap <space> v
 " nmap <space><space> V
 " vmap <space> y
 nmap g, <c-w>
-nmap ,<space> gcc<esc>
-xmap ,<space> gcc<esc>
-
-vmap L <esc>V
-nmap ,c 0C
-vmap ,p ygVgcc<esc>gV<esc>p
-
+nmap ,<space> gcc
+xmap ,<space> gcc
+nmap ,p PPgccj
 "nnoremap Ã§ %
 "xnoremap Ã§ %
 nmap gl $
-nmap gh 0
 "nmap Ã© {
 "vmap Ã© {
 "nmap Ã  }
@@ -113,8 +106,7 @@ nmap [Leader]c<space> mhyypkgci`hj
 nmap dc mhyypkgci`hj
 " TODO need to remap q to clean exit and macro to something else
 nnoremap ,m q
-" nnoremap ,q <esc>:q!<cr>
-nnoremap ,q :x<cr>
+nnoremap ,q <esc>:xa!<cr>
 " nnoremap <m-q> :up<cr>:q<cr>
 " nnoremap <Leader><tab> :b#<cr>
 nnoremap ,<tab> :b#<cr>
@@ -131,19 +123,16 @@ nnoremap gV V`]
 " TODO put back this?
 " nnoremap <esc><esc> <esc>:update<cr>
 " map ! /
-nnoremap ! /
+vnoremap ! /
 nnoremap d! d/
 nnoremap c! c/
 nnoremap v! v/
 nnoremap y! y/
 
-" execute current line in shell
-nnoremap X :.w !bash<cr>
-
 " on mac
 " map = /
-" nnoremap = /
-" vnoremap = /
+nnoremap = /
+vnoremap = /
 " cnoremap = /
 nnoremap d= d/
 nnoremap c= c/
@@ -174,8 +163,6 @@ nnoremap <PageUp> <c-b>
 nnoremap <silent> gk :call cursor(0, virtcol('$')/2)<CR>
 vnoremap <silent> gk mh:call cursor(0, virtcol('$')/2)<CR>v`ho
 nnoremap g= :g//<cr>
-nnoremap g! :g//<cr>
-" nnoremap gm :g//<cr>
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
@@ -222,7 +209,6 @@ nnoremap vm v$
 
 " R: Reindent entire file
 "nnoremap R mqHmwgg=G`wzt`q
-nnoremap ,r :FZFMru<cr>
 " nnoremap ,R mqHmwgg=G`wzt`q
 " Ctrl-ss: (S)earch word under cur(s)or in current directory
 " nnoremap <c-s><c-s> :Unite -buffer-name=grep grep:.::<C-r><C-w><CR>
@@ -290,10 +276,9 @@ nmap <space>s  <Plug>(vimshell_switch)
 " expand all folds
 nnoremap ea zR
 " open path in current line in vimfiler (use with everything)
-" nnoremap g<cr> yy:q<cr>:enew<cr>:VimFiler <c-r>"<cr>
+nnoremap g<cr> yy:q<cr>:enew<cr>:VimFiler <c-r>"<cr>
 " nnoremap <space><tab> :b#<cr>
-nnoremap <c-e> :!ranger %:p:h<cr>
-" nnoremap <c-s-e> :VimFilerBufferDir<cr>
+nnoremap <c-s-e> :VimFilerBufferDir<cr>
 " put split on left
 nnoremap gL <c-w>L
 nnoremap mL <c-w>T
@@ -359,9 +344,6 @@ command! LoadCscope call LoadCscope()
 " autosource vimrc and xkt.vim
 autocmd! bufwritepost .vimrc source %
 autocmd! bufwritepost .xkt.vim source %
-
-" same with i3
-autocmd bufwritepost ~/.config/i3/config :silent !i3-msg restart ; notify-send "Reloaded i3 :)"
 
 " :!cscope -Rbq
 " :cs reset
@@ -452,7 +434,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-nnoremap ,a q
+nnoremap ,a :Unite file_mru<cr>
 
 nnoremap ,gf :vsp <cfile><cr>
 nnoremap ,r :History<cr>
@@ -503,8 +485,7 @@ nnoremap ,cd :cd %:p:h<cr>
 nnoremap ,y "+y
 vnoremap ,y "+y
 nnoremap ,f :FZF<cr>
-nnoremap ,l V
-" nnoremap ,l :Unite locate -start-insert<cr>
+nnoremap ,l :Unite locate -start-insert<cr>
 " open terminal with current path
 nnoremap <silent> gt :<c-u>call system("i3-msg layout stacked; urxvt -cd " . expand("%:p:h") . "&")<cr>
 

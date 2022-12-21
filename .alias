@@ -47,11 +47,12 @@ alias ll="ls -lh"
 alias la="ls -Ca"
 alias lla="ls -lha"
 alias lr="ls -lrt"                          # list recent
+alias lrt="ls -lrt"                          # list recent
 alias lv='vim `ls -tr | tail -1`'           # last vim TODO creer une fonction zsh
 alias vh=fzf-open-file-or-dir               # vim here
 # alias gt='urxvt&'                           # new term here
 alias lra="ls -ra"
-alias ls="exa"
+# alias ls="exa"
 #alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
 alias mkdir="mkdir -p"
 alias mv="mv -i"
@@ -106,8 +107,6 @@ alias keyconf="vim $HOME/.xbindkeysrc"
 
 # to create functions use zshrc
 
-alias o="rifle"
-alias od="nautilus ."
 # my precious
 alias c="cat"
 alias v="vim"           # change this when have fasd
@@ -118,8 +117,9 @@ alias rg="rg -i"
 # alias x="peco | xclip"
 #alias locate="sudo updatedb; locate"
 alias lff="locate / | fzf"
-alias locate="locate -d $HOME/Documents/locate.local"
-alias loc="plocate"
+alias loc="locate"
+# alias locate="locate -d $HOME/Documents/locate.local"
+# alias loc="plocate"
 #alias vz="vim fzfa)"
 # alias vf="vim `fzf`"
 alias fz="locate / | fzf"
@@ -161,9 +161,9 @@ alias image="gpicview"
 alias c="cat"
 # alias v="vim"           # change this when have fasd
 # need fasd
-# alias f='fasd'
+alias f='fasd'
 # if mac
-#alias xclip='pbcopy'
+alias xclip='pbcopy'
 #alias v='fasd -e vim' # quick opening files with vim
 #alias vv='f -e "vim --servername XKT --remote-tab-silent "'
 #alias vim="vim --servername XKT"
@@ -240,38 +240,39 @@ alias installme="sudo pacman -U"
 #alias f='fasd -f' # file
 #alias z='fasd_cd -d' # cd, same functionality as j in autojump
 #alias zz='fasd_cd -d -i' # interactive directory jump
-# alias j='fasd_cd -d' # cd, same functionality as j in autojump
+alias j='fasd_cd -d' # cd, same functionality as j in autojump
 
 # try this
-alias jj="cd (cat ~/.local/share/autojump/autojump.txt | sort -nr | awk -F '\t' '{print \$NF}' | fzf +s)"
+# alias jj="cd (cat ~/.local/share/autojump/autojump.txt | sort -nr | awk -F '\t' '{print \$NF}' | fzf +s)"
 
-alias up="sudo updatedb"
-alias va="vim (plocate / | fzf)"
-alias vl="vim (plocate . | fzf)"
+# alias up="sudo updatedb"
+# alias va="vim (plocate / | fzf)"
+# alias vl="vim (plocate . | fzf)"
 
-alias vv="vim -c 'FZFMru'"
-alias vr="vim -c 'FZFMru'"
+# alias vv="vim -c 'FZFMru'"
+# alias vr="vim -c 'FZFMru'"
 
-alias loc="plocate"
+# alias loc="plocate"
 
-alias sg="googler -j"
-alias s="ddgr -n 5"
+# alias sg="googler -j"
+# alias s="ddgr -n 5"
 # ghq alias
 
 # alias ghq='/home/xkt/go/bin/ghq'
 # alias ghq='/home/xavier/Projects/gocode/bin/ghq'
-#alias ghl='cd $(ghq list -p | fzf)'
-#alias gho='gh-open $(ghq list -p | fzf)'
-# alias ghf='firefox http://www.yasiv.com/github/#/ &'
+alias ghl='cd $(ghq list -p | fzf)'
+alias gho='gh-open $(ghq list -p | fzf)'
+alias ghf='chrome http://www.yasiv.com/github/#/ &'
 
 # copy with progress
 alias cpv='rsync -ah --progress'
 
-alias n="ranger"
+# alias n="ranger"
 # alias n="vifm"
 # alias n='nnn'
 
-alias i="paru --bottomup"
+# alias i="paru --bottomup"
+alias i="brew install"
 
 # alias pvim='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
 # alias g='vim "$(find . -not -iwholename "*.git*" -type f | fzf)"'
@@ -336,18 +337,18 @@ alias how='eg'
 # howdoi et s
 
 # Global aliases
-# alias -g ...='../..'
-# alias -g ....='../../..'
-# alias -g .....='../../../..'
-# alias -g C='| wc -l'
-# alias -g H='| head'
-# # alias -g L="| less"
-# alias -g L="| fzf | xclip"
-# alias -g Z="| fzf | xclip"
-# alias -g N="| /dev/null"
-# alias -g S='| sort'
-# alias -g X='| xclip'
-# alias -g G='| grep' # now you can do: ls foo G something
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g C='| wc -l'
+alias -g H='| head'
+# alias -g L="| less"
+alias -g L="| fzf | xclip"
+alias -g Z="| fzf | xclip"
+alias -g N="| /dev/null"
+alias -g S='| sort'
+alias -g X='| xclip'
+alias -g G='| grep' # now you can do: ls foo G something
 # alias -g X='| peco | xclip'
 # alias -g F='| peco | xclip'
 

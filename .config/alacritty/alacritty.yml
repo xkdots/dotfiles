@@ -34,7 +34,7 @@ key_bindings:
   # kill current pane window
   - { key: D, mods: Command, chars: "\x02x" }
   - { key: D, mods: Command|Shift, chars: "\x02&" }
-  - { key: F, mods: Command, chars: "\e:FZF\n" }
+  - { key: F, mods: Command, chars: ":FZF\n" }
   - { key: F, mods: Command|Shift, chars: "\e:Lfcd\n" }
   # - { key: P, mods: Command, chars: ":GitFiles\n" }
   # gitfiles
@@ -104,7 +104,7 @@ key_bindings:
   - { key: Back, mods: Super, chars: "\x15" }
   # move by word with alt
   - { key: Right, mods: Alt, chars: "\x1BF" }
-  - { key: Left,  mods: Alt, chars: "\x2BB" }
+  - { key: Left,  mods: Alt, chars: "\x1BB" }
   # home end
   - { key: Left, mods: Command, chars: "\x1b\x5b\x31\x7e" }
   - { key: Right, mods: Command, chars: "\x1b\x5b\x34\x7e" }
