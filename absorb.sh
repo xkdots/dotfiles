@@ -1,14 +1,18 @@
-cp -f ~/.alias ~/dotfiles/.alias
-cp -f ~/.bashrc ~/dotfiles/.bashrc
-cp -f ~/.config/fish/config.fish ~/dotfiles/.config/fish/config.fish
-cp -f ~/.config/fish/functions/fish_user_key_bindings.fish ~/dotfiles/.config/fish/functions/fish_user_key_bindings.fish
-cp -f ~/.config/fish/functions/fzf_key_bindings.fish ~/dotfiles/.config/fish/functions/fzf_key_bindings.fish
-cp -f ~/.config/i3/config ~/dotfiles/.config/i3/config
-cp -f ~/.config/kitty/kitty.conf ~/dotfiles/.config/kitty/kitty.conf
-cp -f ~/.config/qutebrowser/config.py ~/dotfiles/.config/qutebrowser/config.py
-cp -f ~/.config/starship.toml ~/dotfiles/.config/starship.toml
-cp -f ~/.config/vifm/vifmrc ~/dotfiles/.config/vifm/vifmrc
-cp -f ~/.fzf.bash ~/dotfiles/.fzf.bash
-cp -f ~/.vimrc ~/dotfiles/.vimrc
-cp -f ~/.xkt.vim ~/dotfiles/.xkt.vim
-cp -f ~/.config/touchcursor/touchcursor.conf ~/dotfiles/.config/touchcursor/touchcursor.conf
+dotfiles_path=~/dotfiles
+dotfiles_path=$PWD
+
+cp -f ~/.alias $dotfiles_path/.alias
+cp -f ~/.bashrc $dotfiles_path/.bashrc
+cp -f ~/.config/alacritty/alacritty.yml ./.config/alacritty/alacritty.yml 
+cp -f ~/.config/fish/config.fish $dotfiles_path/.config/fish/config.fish
+cp -f ~/.config/fish/functions/fish_user_key_bindings.fish $dotfiles_path/.config/fish/functions/fish_user_key_bindings.fish
+cp -f ~/.config/fish/functions/fzf_key_bindings.fish $dotfiles_path/.config/fish/functions/fzf_key_bindings.fish
+cp -f ~/.config/i3/config $dotfiles_path/.config/i3/config
+cp -f ~/.config/kitty/kitty.conf $dotfiles_path/.config/kitty/kitty.conf
+cp -f ~/.config/qutebrowser/config.py $dotfiles_path/.config/qutebrowser/config.py
+cp -f ~/.config/starship.toml $dotfiles_path/.config/starship.toml
+cp -f ~/.config/vifm/vifmrc $dotfiles_path/.config/vifm/vifmrc
+cp -f ~/.fzf.bash $dotfiles_path/.fzf.bash
+cp -f ~/.vimrc $dotfiles_path/.vimrc
+cp -f ~/.xkt.vim $dotfiles_path/.xkt.vim
+cp -f ~/.config/touchcursor/touchcursor.conf $dotfiles_path/.config/touchcursor/touchcursor.conf
