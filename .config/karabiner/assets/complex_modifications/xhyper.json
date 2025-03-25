@@ -1,0 +1,29 @@
+{
+	"title": "Xavier's hyper ugrave → Hyper Key (⌃⌥⇧⌘)",
+	"rules": [
+		{
+			"description": "ugrave quote → Hyper Key (⌃⌥⇧⌘)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "quote",
+						"modifiers": {
+							"optional": ["any"]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_shift",
+							"modifiers": [
+								"left_command",
+								"left_control",
+								"left_option"
+							]
+						}
+					],
+					"type": "basic"
+				}
+			]
+		}
+	]
+}

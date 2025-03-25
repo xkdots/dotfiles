@@ -1,0 +1,40 @@
+1
+
+
+"rules": [
+                    {
+                        "description": "Home to Control Left",
+                        "description2": 'Open ~/.config/karabiner/karabiner.json Edit that file, from the root level > "profiles" > "complex_modifications" > under parameters:{ ... }, add:'
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "home"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": "control"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "End to Control Right",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "end"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": "control"
+                                    }
+                                ] ,
+				 "type": "basic"
+                            }
+                        ]
+                    }
+                ]

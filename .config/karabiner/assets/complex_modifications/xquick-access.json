@@ -1,0 +1,152 @@
+{
+  "title": "Xaviers Function Key - based on sinoridha fn keys",
+  "rules": [
+    {
+      "description": "F2 to close",
+      "manipulators": [{
+        "from": {
+          "key_code": "f2"
+        },
+        "to": [{
+          "key_code": "z",
+          "modifiers": [
+            "command"
+          ]
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "Command F3 to Cut",
+      "manipulators": [{
+        "from": {
+          "key_code": "f3",
+          "modifiers": {
+              "mandatory": ["command"]
+            }
+        },
+        "to": [{
+          "key_code": "x",
+          "modifiers": [
+            "command"
+          ]
+        }],
+        "type": "basic"
+      }]
+    }, {
+      "description": "F3 to Copy",
+      "manipulators": [{
+        "from": {
+          "key_code": "f3"
+        },
+        "to": [{
+          "key_code": "c",
+          "modifiers": ["command"]
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F4 to Paste",
+      "manipulators": [{
+        "from": {
+          "key_code": "f4"
+        },
+        "to": [{
+          "key_code": "v",
+          "modifiers": ["command"]
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F1 to Launch Chrome",
+      "manipulators": [{
+        "from": {
+          "key_code": "f1"
+        },
+        "to": [{
+          "shell_command": "open '/Applications/Google Chrome.app'"
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F5 to Launch Notion",
+      "manipulators": [{
+        "from": {
+          "key_code": "f5"
+        },
+        "to": [{
+          "shell_command": "open '/Applications/Notion.app'"
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F8 to next desktop",
+      "manipulators": [{
+        "from": {
+          "key_code": "f8"
+        },
+        "to": [{
+          "key_code": "right_arrow",
+          "modifiers": ["left_control"]
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F7 to previous desktop",
+      "manipulators": [{
+        "from": {
+          "key_code": "f7"
+        },
+        "to": [{
+          "key_code": "left_arrow",
+          "modifiers": ["left_control"]
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F9 to Launch Slack",
+      "manipulators": [{
+        "from": {
+          "key_code": "f9"
+        },
+        "to": [{
+          "shell_command": "open '/Applications/Slack.app'"
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F10 to Launch Console Alacritty",
+      "manipulators": [{
+        "from": {
+          "key_code": "f10"
+        },
+        "to": [{
+          "shell_command": "open '/Applications/Alacritty.app'"
+        }],
+        "type": "basic"
+      }]
+    },
+    {
+      "description": "F11 to Fullscreen",
+      "manipulators": [{
+        "from": {
+          "key_code": "f11"
+        },
+        "to": [{
+              "key_code": "f",
+              "modifiers": [
+                "control",
+                "command" ]
+        }],
+        "type": "basic"
+      }]
+    }
+  ]
+}

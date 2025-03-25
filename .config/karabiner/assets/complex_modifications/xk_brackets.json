@@ -1,0 +1,123 @@
+{
+  "title": "Xavier bracket with right commands and erdf cluster",
+  "rules": [
+    {
+      "description": "Right command and e for [ and right command and r for ]",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "5",
+            "modifiers": [
+              "right_option",
+              "shift"
+            ]
+          },
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "hyphen",
+            "modifiers": [
+              "right_option",
+              "shift"
+            ]
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Right command and d for { and right command and f for }",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "5",
+            "modifiers": [
+              "right_option"
+            ]
+          },
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "hyphen",
+            "modifiers": [
+              "right_option"
+            ]
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Left option comma and period for <>",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "comma",
+            "modifiers": {
+              "mandatory": [
+                "left_option"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": [
+            ]
+          },
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "period",
+            "modifiers": {
+              "mandatory": [
+                "left_option"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": [
+              "left_shift"
+            ]
+          },
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
