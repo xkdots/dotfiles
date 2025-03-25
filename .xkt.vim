@@ -25,7 +25,7 @@ noremap <LeftRelease> "+y<LeftRelease>
 map mm mm
 nmap gm `m
 
-nmap <space> v
+" nmap <space> v
 " nmap <space><space> V
 " vmap <space> y
 nmap g, <c-w>
@@ -44,7 +44,7 @@ nnoremap sy :set hls<cr>/<c-r>"<cr>N
 " nmap gr <Plug>(choosewin)
 " TODO change some mappings on space visual back to unite
 " TODO make search hls at the same time
-nnoremap <space>p <end>a<space><esc>p
+" nnoremap <space>p <end>a<space><esc>p
 nmap <space>= <c-w>=
 nnoremap <c-g> 1<c-g>
 nnoremap g<c-g> <c-w><c-r>
@@ -425,9 +425,12 @@ smap <esc> <esc>
 nnoremap H ^
 nnoremap L $
 " nnoremap Â² :x<cr>
+"
+vnoremap > >gv
+vnoremap < <gv
 
 cnoremap WW w !sudo tee %
-vnoremap <space> "*y
+" vnoremap <space> "*y
 
 " reopen last position cursor
 if has("autocmd")
@@ -590,7 +593,8 @@ if maparg('<leader>*', 'v') == ''
   vnoremap <leader>* :<C-u>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 endif
 
-" nnoremap <c-d> <esc>:FloatermToggle<cr>
+set hidden
+nnoremap ,d <esc>:FloatermToggle!<cr>
 
 " load my bundles
 " NeoBundle 'ujihisa/unite-locate'
