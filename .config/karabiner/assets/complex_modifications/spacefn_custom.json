@@ -472,6 +472,63 @@
       ]
     },
     {
+      "description": "SpaceFN: Space+backspace to option+backspace, Space+- to option+delete",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                            "left_option"
+                            ]   
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "equal_sign",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward",
+              "modifiers": [
+                            "left_option"
+                            ]   
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "SpaceFN: m enter, p delete, comma backspace, u page up, n page down",
       "manipulators": [
         {
