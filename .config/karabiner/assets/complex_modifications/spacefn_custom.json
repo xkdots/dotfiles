@@ -493,7 +493,7 @@
             }
           ],
           "conditions": [
-            {
+      {
               "type": "variable_if",
               "name": "spacefn_mode",
               "value": 1
