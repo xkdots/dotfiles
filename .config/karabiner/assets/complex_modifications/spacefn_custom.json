@@ -261,7 +261,7 @@
       ]
     },
     {
-      "description": "SpaceFN cluster left: s word left, f word right, row up select, row down delete, e page up, d page down",
+      "description": "SpaceFN cluster left: s word left, f word right, row up select, row down delete, e page up, d page down, a select up, q select down",
       "manipulators": [
         {
           "type": "basic",
@@ -447,6 +447,54 @@
             {
               "key_code": "delete_forward",
               "modifiers": ["option"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": ["right_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": ["right_shift"]
             }
           ],
           "conditions": [
